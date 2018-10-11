@@ -46,7 +46,8 @@ resource "aws_instance" "http-c2" {
 
     connection {
         type = "ssh"
-        user = "admin"
+        // user = "admin"
+        user = "ubuntu"
         private_key = "${tls_private_key.ssh.*.private_key_pem[count.index]}"
     }
   }
